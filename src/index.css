@@ -17,6 +17,13 @@ h1, h2{
     border: 1px solid #800040;
     margin: 0 1rem;
 }
+.btn--alt{
+    color: #800040;
+    background-color: white;
+}
+.btn--alt:hover{
+    color: white;
+}
 .btn:hover{
     background-color: #9c1458;
     border-color: #9c1458;

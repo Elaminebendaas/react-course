@@ -1,14 +1,28 @@
-function Todo() {
+import { useState } from "react"
+import Modal from "./Modal";
+import Backdrop from "./Backdrop";
+
+function Todo(props) {
+    const [showModal, setModal] = useState(false);
+
+    function openModal() {
+        setModal(true);
+    }
+    function closeModal (){
+        setModal(false);
+    }
 
     return (
-    <div> 
-        <div className="card">
-        <h2>TITLE</h2>
-        <div>
-            <button className="btn">Delete</button>
-        </div>
-        </div>
+     
+    <div className="card">
+    <h2>{props.text}</h2>
+    <div>
+        <button className="btn" onClick={openModal}>Delete</button>
     </div>
+    {showModal && <Modal onClick={closeModal}/>}
+    {showModal && <Backdrop onClick={closeModal}/>}
+    </div>
+ 
     )
 
 
